@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Young Transients</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<!-- <a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+								</a> -->
+
+				<!-- Nav -->
+				<!-- <nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav> -->
+
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<!-- <nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Ipsum veroeros</a></li>
+							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</nav> -->
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<h1 style="; color: rgb(60, 50, 50);">Young Transients
+					<a href="mailto:jnordin@physik.hu-berlin.de?subject=from AMPEL project website" target="_blank"
+						class="icon solid fa-envelope" style="font-size: 0.8em;float: right;">&nbsp;<span
+							class="label"></span></a>
+					<a href="https://github.com/AmpelProject" target="_blank" class="icon brands fa-github"
+						style="font-size: 0.8em;float: right;">&emsp;<span class="label"></span></a>
+				</h1>
+				<hr>
+				<figure style="float: left; margin: 0.5em;">
+					<img src="images/sna.jpg" alt="" width="400" height="300" style="float: left; margin: 0.5em	;" />
+					<figcaption> &emsp;Credit:<a
+							href="https://www.cloudynights.com/gallery/image/179916-m101-with-supernova-sn2023ixf-inverted-image/">
+							Gary Eason</a>
+					</figcaption>
+				</figure>
+				<p style="color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif "
+					align="justify">A prime use case for real-time alerts distributed by surveys such as the Zwicky
+					Transient Facility
+					(ZTF) and, in the future, LSST and Ultrasat, is to identify non-recurrent transient events as early
+					as possible. This allows closer studies of a typically explosive process and coordination of
+					possible follow-up observations.
+				</p>
+				<p style="color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif "
+					align="justify">The live AMPEL instance continuously monitors streams for potential young,
+					extragalcatic transients.
+					To minimize the amount of false positives driven by subtraction artifacts, events with few
+					detections are required to occur close to known nearby galaxies.
+				</p>
+				<p style="color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif "
+					align="justify"> We here keep a listing of likely young extragalactic transients discovered during
+					the last week,
+					with references to the Transient Name Server (TNS) and typically front-ends such as AstroColibri.
+					Note that this list is automatically generated and non-permanent.
+				</p>
+				<p style="color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif "
+					align="justify"> As with all AMPEL workflows, the search can be locally reproduced with the ZTF
+					configuration file
+					provided <a
+						href="https://github.com/AmpelAstro/Ampel-HU-astro/blob/main/examples/nearbyInfantReact_token.yml"
+						target="_blank">here</a>.
+
+				</p>
+				<p style="color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif "
+				align="justify">The following table lists the candidate infant supernovae identified by AMPEL live search:</p>
+
+				<pre id="fileContents" >
+					<!-- Text file contents will be dynamically inserted here -->
+				</pre>
+
+				<script>
+					// Function to fetch and display the contents of a text file
+					function displayTextFileContents(filePath) {
+						fetch(filePath)
+							.then(response => response.text())
+							.then(fileContents => {
+								document.getElementById('fileContents').textContent = fileContents;
+							})
+							.catch(error => console.error('Error fetching file:', error));
+					}
+
+					// Call the function with the path to your text file
+					displayTextFileContents('./files/last_updated.txt');
+				</script>
+
+			<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<style>
+					/* Style for scrollable table */
+					#csvTableContainer {
+						/* max-height: 600px; Adjust max-height as needed */
+						overflow-y: auto; /* Enable vertical scroll bar */
+					}
+				</style>
+			</head>
+			<body>
+
+			<div id="csvTableContainer">
+				<table id="csvTable" style="color: black;">
+					<!-- Table content will be dynamically inserted here -->
+				</table>
+			</div>
+
+			<script>
+				// Function to fetch and display the contents of a CSV file in a table
+				function displayCsvTable(filePath) {
+					fetch(filePath)
+						.then(response => response.text())
+						.then(csvData => {
+							var table = document.getElementById('csvTable');
+							var rows = csvData.split('\n');
+							
+							for (var i = 0; i < rows.length; i++) {
+								var cells = rows[i].split(',');
+								var row = table.insertRow();
+								
+								for (var j = 0; j < cells.length; j++) {
+									var cell = row.insertCell();
+									cell.textContent = cells[j];
+								}
+							}
+						})
+						.catch(error => console.error('Error fetching CSV file:', error));
+				}
+
+				// Call the function with the path to your CSV file
+				displayCsvTable('./files/TransientTable.csv');
+			</script>
+			</body>
+						
+			</div>
+		</div>
+	</div>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+
+</html>
